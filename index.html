@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="page container d-flex position-relative align-items-center flex-column justify-content-center"><h2 class="text-center fs-1">Bookmarker</h2>
+        <div class="borderstyle w-100 d-flex flex-column justify-content-center align-items-center mt-3 py-4 p-3">
+                <h3><i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark"></i></h3>
+                    <div class="mb-3 w-100 position-relative">
+                        <label for="siteName"><i class="fa-solid fa-book-bookmark"></i> Site Name</label>
+                        <input onkeyup="checkName()" id="siteName" type="text" class="form-control border  border-danger mt-1" />
+                        <span class="position-absolute spanname text-success"style="display: none;"id="correct"><i class="fa-solid fa-check"></i></span>
+                        <span  class="position-absolute spanname text-danger"style="display: none;"id="alertName"><i class="fa-solid fa-circle-exclamation"></i></span>
+
+                    </div>
+                    <div class="mb-3 w-100 position-relative">
+                        <label for="siteUrl"><i class="fa-solid fa-link"></i> Site URL</label>
+                        <input onkeyup="checkUrl()" id="siteUrl" type="text" class="form-control border border-danger mt-1 position-relative" />
+                        <span class="position-absolute spanname text-success"style="display: none;"id="correctUrl"><i class="fa-solid fa-check"></i></span>
+                        <span class="position-absolute spanname text-danger" style="display: none;"id="alertUrl"><i class="fa-solid fa-circle-exclamation"></i></span>
+                    </div>
+                    <button onclick="addSite()" class="btnn btn btn-submit px-5" id="submitBtn">Submit</button>
+
+        </div>
+        <table class="table table-light mt-5 text-center ">
+
+            <thead>
+                <th>Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+   
+    <div id="alertbookm"class="alertbookmark w-100 h-100 position-fixed  justify-content-center align-items-center position-absolute top-0 start-0">
+    
+        <div class="content w-50 shadow-lg rounded-2 bg-white position-relative p-5">
+           <i id="closeEl" class="fa-regular  fa-2x fa-circle-xmark m-3 position-absolute top-0 end-0"></i>
+
+            <div class="dots d-flex mb-3">
+                <span class="rounded-circle bg1 me-2"></span>
+                <span class="rounded-circle bg2 me-2"></span>
+                <span class="rounded-circle bg3 me-2"></span>
+            </div>
+            <p>Site Name or Url is not valid, Please follow the rules below :</p>
+            <h4><i class="fa-regular fa-circle-right p-2 text-danger"></i> Site name must contain at least 3 characters</h4>
+            <h4><i class="fa-regular fa-circle-right p-2 text-danger"></i> Site URL must be a valid one</h4>
+        </div>
+        </div>
+</div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
